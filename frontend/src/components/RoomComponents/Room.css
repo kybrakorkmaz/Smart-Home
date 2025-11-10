@@ -1,0 +1,174 @@
+/*=============
+ROOM STYLING
+=========================*/
+.room-wrapper .room{
+    position: relative; /** prop butonu pozisyonu için gereklı **/
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    transition: .5s;
+    background: linear-gradient(to right, #EFE9E3, #D9CFC7);
+}
+.room-wrapper .room:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+}
+.room .icons{
+    width:clamp(16px, 90%, 64px);
+    height: clamp(16px, 90%, 64px);
+    color:#1A2A4F  !important;
+}
+.room h2{
+    font-size: 1.5em;
+    color:#11224E;
+
+}
+.room p{
+    margin: 1em 0 1.8em;
+    color:#53629E;
+}
+.room .prop-wrapper{
+    position: absolute;
+    inset-inline-end: 2rem; /* right edge */
+    inset-block-end: 1rem;  /* bottom edge */
+}
+/*=============
+BUTTON PROPERTIES
+=========================*/
+.room .room-front label{
+    display: flex;
+    width:5rem;
+    height: 2rem;
+
+}
+.room label{
+    color: #11224E;
+}
+.room .room-front button, .room .room-back button{
+    background: transparent;
+    text-align: left;
+    padding: .3%;
+    cursor: pointer;
+    border: none;
+}
+
+.room .room-front button{
+    margin-left: 3%;
+    margin-bottom: 7%;
+    color: #11224E;
+}
+.room .room-front button:hover, .room-back button:hover{
+    color: #A72703;
+}
+.room .room-back .room-prop{
+    display: block;
+}
+.room-prop .input-box{
+    width: 5rem;
+    margin: 3% 5%;
+}
+.room .room-back button{
+    position: absolute;
+    inset-inline-end: 1rem; /* right edge */
+    inset-block-end: 1rem;  /* bottom edge */
+    color: #11224E;
+
+}
+/*=============
+ROOM PROPERTIES
+=========================*/
+.room-prop{
+    display: flex;
+    justify-content: center;
+    width: clamp(100px, 80%, 500px);
+    align-items: center;
+    margin: 5% auto;
+}
+/*=============
+TEMPERATURE
+=========================*/
+.temperature-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    width: 100%;
+    height: 3rem;
+}
+#temperature-bar{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+#temperature-bar input[type="range"] {
+    flex: 1;
+}
+
+.temperature-value label{
+    display: inline-block;
+    width: 3ch;
+    text-align: center;
+}
+
+/*=============
+End tick marks
+=========================*/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: .35rem;
+    background: #ccc;
+}
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: .8rem;
+    width: .8rem;
+    background-color: #26667F;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+    height: .8rem;
+    width: .8rem;
+    background-color: #26667F;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+/* Hover, active & focus Thumb: Webkit */
+input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(29,84,108, .1)
+}
+input[type="range"]:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(29,84,108, .2)
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgba(29,84,108, .2)
+}
+
+/* Hover, active & focus Thumb: Firefox */
+
+input[type="range"]::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgba(29,84,108, .1)
+}
+input[type="range"]:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(29,84,108, .2)
+}
+input[type="range"]:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgba(29,84,108, .2)
+}
+@media screen and (max-width: 350px){
+    .home-wrapper .room-wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

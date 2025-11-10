@@ -1,0 +1,125 @@
+:root {
+    --input-hover-bg-color: #9DB1EC40;
+    --input-hover-border-color: #d3d3d3;
+    --input-focus-color:#132762;
+    --button-hover-bg-color:#E6F2FF;
+    --button-focus-color:#002347;
+}
+/*=============
+FORM STYLING
+=========================*/
+.form-wrapper{
+    position: relative;
+    margin: 6% auto;
+    width:clamp(150px, 90%, 420px);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 1rem rgba(255, 255, 255, .2);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.form-wrapper h1{
+    font-size: 2em; /* font-size*/
+    text-align: center;
+}
+/*=============
+FORM INPUT STYLING
+=========================*/
+.form-wrapper .input-box{
+    width: 100%;
+    height: 3.5rem;
+    margin: 2rem 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 0.1rem solid rgba(255, 255, 255, .2);
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1.01em;
+    padding: 1rem 2rem 1rem 1rem;
+}
+.form-wrapper .input-box input:hover{
+    background: var(--input-hover-bg-color);
+    border-color: var(--input-hover-border-color);
+}
+.form-wrapper .input-box input:focus{
+    background: var(--input-focus-color);
+}
+input::placeholder{
+    color: #fff
+}
+.input-box .icon{
+    position: relative;
+    bottom: 50%;
+    left: 95%;
+    transform: translate(-95%, -50%);
+    font-size: 1em;
+}
+/*=============
+FORM BUTTON STYLING
+=========================*/
+.form-submit-button{
+    width: 100%;
+    height: 2.8rem;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+    font-weight:700;
+}
+.form-submit-button:hover{
+    background: var(--button-hover-bg-color);
+}
+.form-submit-button:focus{
+    background: var(--button-focus-color);
+}
+/*=============
+FORM STYLING REGISTER
+=========================*/
+.register .register-link{
+    font-size: 0.9em;
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+}
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link a:hover{
+    text-decoration: underline;
+}
+.register  .policy-box{
+    margin: 2rem 0 1.5rem;
+}
+.policy-box input{
+    accent-color: #fff;
+}
+/*=============
+FORM STYLING REMEMBER-FORGOT
+=========================*/
+.form-wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    margin: -1rem 0 1.5rem;
+}
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 0.2rem;
+}
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}

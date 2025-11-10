@@ -1,0 +1,75 @@
+.home-container{
+    display: block;
+}
+/*=============
+SETTINGS-WEATHER-STYLING
+=========================*/
+.settings-weather-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    margin: 3% 7% 0;
+}
+/*=============
+Settings
+=========================*/
+.settings-wrapper{
+    display: flex;
+    flex-wrap: wrap; /* Alt satıra geçme */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    border: solid 2px rgba(188, 70, 255, 0.69);
+    box-sizing: border-box;
+    min-width: clamp(250px, 50%, 400px);
+}
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    border: solid 2px rgba(255, 251, 4, 0.82);
+    padding: 0.5rem;
+    border-radius: 10px;
+    /* responsive genişlik — örneğin kart büyüklüğü */
+    flex: 1 1 clamp(160px, 25%, 200px);
+    box-sizing: border-box;
+}
+
+.setting{
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    flex: 1 1 clamp(80px, 40%, 120px);
+    text-align: center;
+}
+.settings-icon{
+    width: clamp(16px, 50%, 64px);
+    margin: 2%;
+}
+/*=============
+Rooms
+=========================*/
+.home-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 9%;
+    color: #333;
+    text-align: center;
+}
+.home-wrapper .heading{
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+    color:#E1D0B3;
+}
+
+.home-wrapper .room-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
