@@ -8,9 +8,10 @@ Weather
     font-family: "Montserrat", "sans-serif";
     font-size: 0.8em;
     border-radius: 1rem;
-    width: clamp(280px, 35%, 35rem); /* Ekrana göre ayarlanır */
+    width: clamp(280px, 90%, 35rem); /* Ekrana göre ayarlanır */
+    /*height: clamp(150px, 90%, 15rem);  Ekrana göre ayarlanır */
     box-sizing: border-box;
-    background: linear-gradient(#C2E2FA, #33143C);
+    background: linear-gradient(#D9EAFD, #81BFDA);
     box-shadow: 0 10px 20px rgba(0,0,0, 0.1);
     z-index: 1;
 }
@@ -25,6 +26,12 @@ Weather
     z-index: -1;
     opacity: 0.7;
 }
+.weather-section :where(h2, p){
+    color: #fff;
+}
+/*=============
+Search Section
+=========================*/
 .search-section{
     display: flex;
     align-items: center;
@@ -90,38 +97,36 @@ Weather
 .search-section .location-button:focus svg{
     fill: #3c3c3c;
 }
-.weather-section :where(h2, p){
-    color: #fff;
-}
-.current-weather span{
-    margin-bottom: 2rem;
-}
+/*=============
+Current Weather
+=========================*/
 .weather-section .current-weather{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #000;
 }
 .current-weather .weather-icon{
-    width:clamp(16px, 90%, 64px);
-    height: clamp(16px, 90%, 64px);
+    margin: 3% auto 0;
+    width:clamp(32px, 90%, 76px);
+    height: clamp(32px, 90%, 76px);
     aspect-ratio: 1;
-    border: 1px solid #000;
 }
 .current-weather .weather-temperature{
-    margin: 0.4rem 0;
-    font-size: 1.3rem;
-    border: 1px solid #000;
+    display: flex;
+    margin: 0.4rem auto;
+    font-size: 1.5rem;
+    font-weight:600;
 }
-.weather-temperature span{
-    font-size: 0.8rem;
-    font-weight: 400;
-    border: 1px solid #000;
-    margin-bottom: 5px; /* do not work */
+.current-weather .weather-temperature span{
+    font-size: 1rem;
+    font-weight: 500;
 }
 .current-weather .description{
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
+/*=============
+Hourly Weather
+=========================*/
 .hourly-forecast{
     padding: 1.5rem 2.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -129,33 +134,37 @@ Weather
 .hourly-forecast .weather-list{
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
     overflow-x: auto;
     scrollbar-width: thin;
-    padding-bottom: 1rem;
-    margin-bottom: -1rem;
+    padding-bottom: 2rem;
     scrollbar-color: transparent transparent;
+    margin: auto auto;
+    padding-top: 1rem;
 }
 .hourly-forecast:hover .weather-list{
     scrollbar-color: #c5bcdb transparent;
 }
 .hourly-forecast .weather-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: clamp(150px, 80%, 200px);
+    position: relative;
 }
-.weather-item .weather-temperature{
-    display: flex;
+.hourly-forecast .weather-item .time{
+    font-size: 0.7rem;
 }
-.weather-item .weather-temperature:where(h2){
-    font-size: 1.3em;
-    font-weight: 600;
+.hourly-forecast .weather-item h2{
+    margin-top: 10%;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.hourly-forecast .weather-item span{
+    position: absolute;
+    font-size: 0.7rem;
+    font-weight: 400;
 }
 .hourly-forecast .weather-item .weather-icon{
     width: clamp(48px, 90%, 64px);
+    height: clamp(48px, 90%, 64px);
 }
-
 .no-results{
     color: #fff;
     display: flex;

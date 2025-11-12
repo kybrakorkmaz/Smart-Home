@@ -1,18 +1,19 @@
 :root {
-    --input-hover-bg-color: #9DB1EC40;
+    --input-hover-bg-color: #F8F4EC;
     --input-hover-border-color: #d3d3d3;
-    --input-focus-color:#132762;
-    --button-hover-bg-color:#E6F2FF;
-    --button-focus-color:#002347;
+    --input-focus-color:#A18D6D;
+    --button-hover-bg-color:#FFF8D4;
+    --button-focus-color:#C4A484;
+    --font-color:#432323;
 }
 /*=============
 FORM STYLING
 =========================*/
 .form-wrapper{
     position: relative;
-    margin: 6% auto;
+    margin: auto auto;
     width:clamp(150px, 90%, 420px);
-    color: #fff;
+    color: var(--font-color);
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(30px);
     box-shadow: 0 0 1rem rgba(255, 255, 255, .2);
@@ -36,9 +37,9 @@ FORM INPUT STYLING
     height: 100%;
     background: transparent;
     outline: none;
-    border: 0.1rem solid rgba(255, 255, 255, .2);
+    border: 0.1rem solid rgb(4, 5, 11);
     border-radius: 1rem;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.01em;
     padding: 1rem 2rem 1rem 1rem;
 }
@@ -50,7 +51,7 @@ FORM INPUT STYLING
     background: var(--input-focus-color);
 }
 input::placeholder{
-    color: #fff
+    color: var(--font-color)
 }
 .input-box .icon{
     position: relative;
@@ -90,7 +91,7 @@ FORM STYLING REGISTER
     margin: 2rem 0 1.5rem;
 }
 .register-link p a {
-    color: #fff;
+    color: var(--font-color);
     text-decoration: none;
     font-weight: 600;
 }
@@ -117,7 +118,7 @@ FORM STYLING REMEMBER-FORGOT
     margin-right: 0.2rem;
 }
 .remember-forgot a {
-    color: #fff;
+    color: var(--font-color);
     text-decoration: none;
 }
 .remember-forgot a:hover{

@@ -5,14 +5,15 @@ import "../WeatherComponents/Weather.css";
 import "../RoomComponents/Room.css"
 import { useNavigate} from "react-router-dom";
 import {getRooms} from "../../utils/saveRooms.jsx";
-import HomeSettings from "./HomeSettings.jsx";
+import HomeSettings from "../HomeSettings/HomeSettings.jsx";
 import {saveSettings} from "../../utils/settingsStorage.jsx";
 import { updateRoomsBasedOnSettings } from "../../utils/settingsStorage.jsx";
 import SearchSection from "../WeatherComponents/SearchSection.jsx";
 import CurrentWeather from "../WeatherComponents/CurrentWeather.jsx";
 import HourlyWeather from "../WeatherComponents/HourlyWeather.jsx";
 import { weatherCodes } from "../../utils/weatherCodes.jsx";
-
+import Profile from "../ProfileComponent/Profile.jsx";
+import "../ProfileComponent/Profile.css"
 function Home(){
     const [currentWeather, setCurrentWeather] = useState({});
     const [hourlyForecasts, setHourlyForecasts] = useState([]);
@@ -103,13 +104,13 @@ function Home(){
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY;
-    const defaultCity = "London";
+    const defaultCity = "London"; //todo fetch from localStorage
     const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity.toUpperCase()}&days=2`; //24 hours forecast (2 days)
     getWeatherDetails(API_URL);
   }, []);
   return (
     <div className={"home-container"}>
-      <div className={"profile"}>{/*icon*/}</div>
+      <Profile/>
       <div className={"settings-weather-wrapper"}>
         <div className={"weather-wrapper"}>
           {/* Search Section */}

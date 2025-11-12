@@ -5,6 +5,7 @@ import RegisterForm from "./components/LoginRegisterForm/RegisterForm.jsx";
 import ForgotPassForm from "./components/LoginRegisterForm/ForgotPassForm.jsx";
 import Home from "./components/HomeComponents/Home.jsx";
 import RoomSetup from "./components/RoomComponents/RoomSetup.jsx";
+import ProfileSettings from "./components/ProfileComponent/ProfileSettings.jsx";
 function App() {
 
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path={"/Forgot-Password"} element={<ForgotPassForm/>}/>
             <Route path={"/Home"} element={<Home/>} />
             <Route path={"/Room-Setup"} element={<RoomSetup/>}/>
+            <Route path={"/profile"} element={<ProfileSettings/>}/>
         </Routes>
     </BrowserRouter>
   )

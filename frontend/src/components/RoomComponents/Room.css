@@ -6,7 +6,7 @@ ROOM STYLING
     padding: 3rem 2rem;
     border-radius: 1rem;
     transition: .5s;
-    background: linear-gradient(to right, #EFE9E3, #D9CFC7);
+    background:  #FFF5D7;
 }
 .room-wrapper .room:hover{
     transform: scale(1.03);

@@ -17,40 +17,49 @@ SETTINGS-WEATHER-STYLING
 Settings
 =========================*/
 .settings-wrapper{
+    margin: auto auto;
     display: flex;
-    flex-wrap: wrap; /* Alt satıra geçme */
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 1rem;
     flex: 1;
-    border: solid 2px rgba(188, 70, 255, 0.69);
+    border: solid 2px #501561;
+    border-radius: 1rem;
     box-sizing: border-box;
     min-width: clamp(250px, 50%, 400px);
+    background: transparent;
 }
 .settings {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
-    border: solid 2px rgba(255, 251, 4, 0.82);
     padding: 0.5rem;
     border-radius: 10px;
-    /* responsive genişlik — örneğin kart büyüklüğü */
     flex: 1 1 clamp(160px, 25%, 200px);
     box-sizing: border-box;
+    background: #FFF5D7;;
 }
-
 .setting{
-    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border: 2px dashed rgba(255, 1, 1, 0.44);
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    flex: 1 1 clamp(80px, 40%, 120px);
+    flex: 1 1 clamp(48px, 40%, 96px);
     text-align: center;
 }
-.settings-icon{
-    width: clamp(16px, 50%, 64px);
-    margin: 2%;
+.setting:hover{
+    border: 2px solid rgba(255, 1, 1, 0.44);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
 }
+.settings-icon{
+    width: clamp(16px, 50%, 32px);
+    height: clamp(16px, 50%, 32px);
+    aspect-ratio: 1;
+    margin-top: 0.5rem;
+}
+
 /*=============
 Rooms
 =========================*/

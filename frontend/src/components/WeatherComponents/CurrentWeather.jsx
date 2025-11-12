@@ -10,7 +10,7 @@ export default function CurrentWeather({currentWeather}){
       <h2 className="weather-temperature">
         {Math.floor(currentWeather.temperature)} <span>°C</span>
       </h2>
-      <p className="decription">{currentWeather.description}</p>
+      <p className="description">{currentWeather.description}</p>
     </div>
   );
 }
