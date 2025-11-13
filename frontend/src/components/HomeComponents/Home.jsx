@@ -14,6 +14,7 @@ import HourlyWeather from "../WeatherComponents/HourlyWeather.jsx";
 import { weatherCodes } from "../../utils/weatherCodes.jsx";
 import Profile from "../ProfileComponent/Profile.jsx";
 import "../ProfileComponent/Profile.css"
+import RoomSettings from "../RoomComponents/RoomSettings.jsx";
 function Home(){
     const [currentWeather, setCurrentWeather] = useState({});
     const [hourlyForecasts, setHourlyForecasts] = useState([]);
@@ -173,6 +174,7 @@ function Home(){
           )}
         </div>
       </section>
+      <RoomSettings/>
     </div>
   );
 }

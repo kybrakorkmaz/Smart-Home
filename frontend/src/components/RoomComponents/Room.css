@@ -11,6 +11,7 @@ ROOM STYLING
 .room-wrapper .room:hover{
     transform: scale(1.03);
     box-shadow: 0 0 20px rgba(0,0,0,.2);
+
 }
 .room .icons{
     width:clamp(16px, 90%, 64px);
@@ -171,4 +172,31 @@ input[type="range"]:focus::-moz-range-thumb {
     .home-wrapper .room-wrapper{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+}
+/*=============
+ROOM INCREMENT DECREMENT STYLING
+=========================*/
+.room-number-settings{
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    bottom: 0;
+}
+.room-number-settings .room-controller{
+    width: clamp(32px, 90%, 48px);
+    height: clamp(32px, 90%, 48px);
+    aspect-ratio: 1;
+    margin: auto 1% 1% 1%;
+    color: #E1D0B3;
+    box-shadow:2px 2px 2px 1px rgb(0 0 0 / 20%);
+    border-radius: 1rem;
+    background: #A18D6D;
+    opacity: 0.7;
+}
+.room-number-settings .room-controller:hover{
+    background: #A18D6D;
+    transform: scale(1.1);
+    cursor: pointer;
+    opacity: 1;
 }
