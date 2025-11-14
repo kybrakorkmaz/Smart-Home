@@ -187,7 +187,7 @@ ROOM INCREMENT DECREMENT STYLING
     width: clamp(32px, 90%, 48px);
     height: clamp(32px, 90%, 48px);
     aspect-ratio: 1;
-    margin: auto 1% 1% 1%;
+    margin: auto 0.5% 1% 0.5%;
     color: #E1D0B3;
     box-shadow:2px 2px 2px 1px rgb(0 0 0 / 20%);
     border-radius: 1rem;

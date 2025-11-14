@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import MessageBox from "../MessageBox/MessageBox.jsx";
 import Input from "../Input.jsx";
-import { getUser, saveUser } from "../../utils/userInfo.jsx";
+import { getUserList, saveUser } from "../../utils/userInfo.jsx";
 
 
 
@@ -52,7 +52,7 @@ function RegisterForm(){
             console.log(msg);
         }else{
           //get users from localStorage
-          const users = getUser();
+          const users = getUserList();
           if (!emailRegex.test(formData.email)) {
             setMsg("Please enter a valid email address!");
             setCalled(true);
@@ -108,7 +108,7 @@ function RegisterForm(){
               <Input type={"text"} placeholder={"Email"} value={formData.email} name={"email"} onChange={handleChange}/>
               <Input type={"text"} placeholder={"Password"} value={formData.password} name={"password"} onChange={handleChange}/>
               <Input type={"text"} placeholder={"Confirm Password"} value={formData.confirmPassword} name={"confirmPassword"} onChange={handleChange}/>
-              <Input type={"text"} placeholder={"City"} value={formData.confirmPassword} name={"city"} onChange={handleChange}/>
+              <Input type={"text"} placeholder={"City"} value={formData.city} name={"city"} onChange={handleChange}/>
               {/* Policy Box */}
               <div className={"policy-box"}>
                 <label><input

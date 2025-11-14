@@ -1,8 +1,8 @@
-import { getUser } from "../../utils/userInfo.jsx";
+import { getUserList } from "../../utils/userInfo.jsx";
 import Input from "../Input.jsx";
 // todo use cookie for the validation
 export default function ProfileSettings(){
-  const userInfo = getUser();
+  const userInfo = getUserList();
   function handleChange(e){
     e.preventDefault();
   }

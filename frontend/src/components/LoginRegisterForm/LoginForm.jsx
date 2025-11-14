@@ -5,7 +5,7 @@ import {IoMailSharp} from "react-icons/io5";
 import {Link, useNavigate} from "react-router-dom";
 import MessageBox from "../MessageBox/MessageBox.jsx";
 import Input from "../Input.jsx";
-import { getUser } from "../../utils/userInfo.jsx";
+import { getCurrentUser, getUserList } from "../../utils/userInfo.jsx";
 
 function LoginForm(){
     const [email, setEmail] = useState("");
@@ -26,10 +26,13 @@ function LoginForm(){
 
     function handleClick(e){
         e.preventDefault();
-        const userList = getUser();
+        const userList = getUserList();
         if (email && password) {
           const user = userList.find(user => user.email === email && user.password === password);
-          if(user)navigate("/Home");
+          if(user){
+            localStorage.setItem("currentUser",JSON.stringify(user));
+            navigate("/Home");
+          }
           else{
             setCalled(true);
             setMsgInput("Invalid email or password");

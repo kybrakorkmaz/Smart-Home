@@ -15,11 +15,12 @@ import { weatherCodes } from "../../utils/weatherCodes.jsx";
 import Profile from "../ProfileComponent/Profile.jsx";
 import "../ProfileComponent/Profile.css"
 import RoomSettings from "../RoomComponents/RoomSettings.jsx";
+import { getCurrentUser } from "../../utils/userInfo.jsx";
 function Home(){
     const [currentWeather, setCurrentWeather] = useState({});
     const [hourlyForecasts, setHourlyForecasts] = useState([]);
     const [hasNoResult, setHasNoResult] = useState(false);
-    const searchInputRef = useRef(null);
+    const locationRef = useRef(null);
     const filterHourlyForecast = (hourlyData) =>{
       const currentHour = new Date().setMinutes(0, 0 ,0);
       const next24Hours = currentHour + 24*60*60*1000;
@@ -79,7 +80,7 @@ function Home(){
     // Fetches weather details based on the API URL
   const getWeatherDetails = async (API_URL) =>{
       setHasNoResult(false);
-      window.innerWidth <= 768 && searchInputRef.current.focus();
+      window.innerWidth <= 768 && locationRef.current.focus();
       try{
         const response = await fetch(API_URL);
         if(!response.ok) throw new Error();
@@ -96,7 +97,7 @@ function Home(){
         // combined hourly data from both forecast days
         const combinedHourlyDay = [...data.forecast.forecastday[0].hour,
           ...data.forecast.forecastday[1].hour];
-        searchInputRef.current.value =data.location.name;
+        locationRef.current.value =data.location.name;
         filterHourlyForecast(combinedHourlyDay);
       }catch{
         setHasNoResult(true);
@@ -105,17 +106,22 @@ function Home(){
 
   useEffect(() => {
     const API_KEY = import.meta.env.VITE_API_KEY;
-    const defaultCity = "London"; //todo fetch from localStorage
-    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity.toUpperCase()}&days=2`; //24 hours forecast (2 days)
-    getWeatherDetails(API_URL);
-  }, []);
+    console.log("hit useEffect");
+    const user = getCurrentUser();
+    if(!user) return;
+    console.log("current city", user.city);
+    const currentCity = user.city;
+    console.log(API_KEY);
+    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${currentCity.toUpperCase()}&days=2`; //24 hours forecast (2 days)
+    getWeatherDetails(API_URL); // Fetches weather details for the entered city
+  },[]);
   return (
     <div className={"home-container"}>
       <Profile/>
       <div className={"settings-weather-wrapper"}>
         <div className={"weather-wrapper"}>
           {/* Search Section */}
-          <SearchSection getWeatherDetails={getWeatherDetails} searchInputRef={searchInputRef}/>
+          <SearchSection getWeatherDetails={getWeatherDetails} locationRef={locationRef}/>
           { /* todo {hasNoResult ? (<NoResultsDiv) : weather section }*/}
           {/* Weather Section */}
           <div className="weather-section">
